@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>83 Graphics & Digital</title>
+    <link href="/graphicicon.png" rel="icon">
+
+    <!-- Google font  -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700"
+        rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css    ">
+
+    <!-- css file  -->
+
+    <!-- icons link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Bootstrap link  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="newweb.css">
+
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
+
+        svg {
+            font-family: "Russo One", sans-serif;
+            width: 150px;
+            height: 80px;
+        }
+
+        svg text {
+            animation: stroke 3s infinite alternate;
+            stroke-width: 2;
+            stroke: #000;
+            font-size: 100px;
+        }
+
+        @keyframes stroke {
+            0% {
+                fill: rgba(255, 21, 64, 0);
+                stroke: rgba(255, 21, 64, 1);
+                stroke-dashoffset: 25%;
+                stroke-dasharray: 0 50%;
+                stroke-width: 2;
+            }
+
+            60% {
+                fill: rgba(255, 21, 64, 0);
+                stroke: rgba(255, 21, 64, 1);
+            }
+
+            70% {
+                fill: rgba(255, 21, 64, 0);
+                stroke: rgba(255, 21, 64, 1);
+                stroke-width: 3;
+            }
+
+            100% {
+                fill: rgba(255, 21, 64, 1);
+                stroke: rgba(255, 21, 64, 0);
+                stroke-dashoffset: -25%;
+                stroke-dasharray: 50% 0;
+                stroke-width: 0;
+            }
+        }
+
+        .wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: #fff;
+            z-index: 1;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            align-items: center;
+            justify-content: center;
+            color: #191654;
+        }
+
+        .name-container {
+            height: 30px;
+            overflow: hidden;
+        }
+
+        .logo-name {
+            color:#000;
+            font-size: 15px;
+            letter-spacing: 10px;
+            text-transform: uppercase;
+            margin-left: 20px;
+            font-weight: bolder;
+            font-family: "Michroma", sans-serif;
+        }
+
+
+        .loader {
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffffff;
+            transition: opacity 0.75s, visibility 0.75s;
+        }
+
+        .loader-hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader::after {
+            content: "";
+            width: 75px;
+            height: 75px;
+            border: 15px solid #dddddd;
+            border-top-color: #7449f7;
+            border-radius: 50%;
+            animation: loading 0.75s ease infinite;
+        }
+
+        @keyframes loading {
+            from {
+                transform: rotate(0turn);
+            }
+
+            to {
+                transform: rotate(1turn);
+            }
+        }
+
+        .back-to-top {
+            position: fixed;
+            opacity: 0;
+            right: 15px;
+            bottom: 15px;
+            background: #ff1540;
+            width: 40px;
+            height: 40px;
+            transition: all 0.4s;
+            border-radius: 50%;
+            pointer-events: none;
+            list-style-type: none;
+            text-decoration: none;
+        }
+
+        .back-to-top i {
+            font-size: 20px;
+            color: #ffffff;
+            line-height: 0;
+        }
+
+        .back-to-top:hover {
+            background: #ff1540;
+            color: #fff;
+
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            pointer-events: visible;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="loader"></div> -->
+
+    <div class="wrapper">
+        <svg>
+            <text x="50%" y="50%" dy=".35em" text-anchor="middle">
+                83
+            </text>
+        </svg>
+        <div class="name-container">
+            <div class="logo-name">GRAPHICS</div>
+        </div>
+    </div>
+
+    <!-- ============= Top Bar =============== -->
+    <!-- <section id="topbar" class="d-flex align-items-center">
+        <div class="container d-flex justify-content-center justify-content-md-between">
+            <div class="contact-info d-flex align-items-center">
+                <i class="fa fa-envelope-o d-flex align-items-center"><a href="">contact@example.com</a></i>
+                <i class="fa fa-mobile d-flex align-items-center m-sm-4"><span>+1 5589 55488 55</span></i>
+            </div>
+            <div class="social-links d-none d-md-flex align-items-center">
+                <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+                <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- =========== Header ================ -->
+    <header id="header" class="d-flex align-items-center">
+        <div class="container justify-content-between ">
+            <nav class="navbar  navbar-light navbar-expand-md">
+                <div id="logo">
+                    <h1><a href="">83<span>Graphics</span></a></h1>
+                </div>
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#mynavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div id="mynavbar" class="collapse navbar-collapse justify-content-end">
+                    <ul class="navbar-nav ">
+                        <li class="nav-items"><a class="nav-link" href="#hero">Home</a></li>
+                        <li class="nav-items"><a class="nav-link" href="#about">About</a></li>
+                        <li class="nav-items"><a class="nav-link" href="#services">Services</a></li>
+                        <li class="nav-items"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                        <li class="nav-items"><a class="nav-link" href="#portfolio">Team</a></li>
+                        <li class="nav-items"><a class="nav-link" href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ======================== hero section======================== -->
+    <section id="hero">
+        <div class="hero-content wow animate__animated animate__fadeInUp">
+            <h1>I'm a <span class="sec-text"></span></h1>
+            <div class="button">
+                <a class="btn Started" href="#about">Get Started</a>
+                <a class="btn project" href="#portfolio">Our Projects</a>
+            </div>
+            <div class="social-icon">
+                <div class="icons">
+                    <a href="https://instagram.com/83graphics?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D"><i
+                            class="fa fa-instagram"></i></a>
+                </div>
+                <div class="icons">
+                    <a href="https://wa.link/7uqf2n"><i class="fa fa-whatsapp"></i></a>
+                </div>
+                <div class="icons">
+                    <a href="https://t.me/Graphics83"><i class="fa fa-telegram"></i></a>
+                </div>
+                <div class="icons">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =============== about us ====================== -->
+    <section id="about" class="wow animate__animated animate__fadeInUp">
+        <div class="container container-lg container-md container-sm container-xl container-xxl">
+            <div class="row">
+                <div class="col-lg-6">
+                    <img class="img-fluid" src="/about.jpg" alt="">
+                </div>
+                <div class="col-lg-6 about-info">
+                    <h2>Lorem ipsum dolor sit amet, consectetur adipiscing</h2>
+                    <h3>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
+                        id est laborum.</h3>
+                    <ul>
+                        <li><i class="fa fa-check-circle-o" aria-hidden="true"></i>Ullamco laboris nisi ut aliquip ex ea
+                            commodo consequat.</li>
+                        <li><i class="fa fa-check-circle-o" aria-hidden="true"></i>Duis aute irure dolor in
+                            reprehenderit in voluptate velit.</li>
+                        <li><i class="fa fa-check-circle-o" aria-hidden="true"></i>Ullamco laboris nisi ut aliquip ex ea
+                            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta
+                            storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================= Serives ============================= -->
+    <section id="services">
+        <div class="container">
+            <div class="section-header wow animate__animated animate__fadeInUp">
+                <h2>SERVICES</h2>
+                <p>Sed tamen tempor magna labore dolore dolor sint tempor duis magna elit veniam aliqua esse amet veniam
+                    enim export </p>
+                <div class="row wow animate__animated animate__fadeInUp">
+                    <div class="col-lg-4 wow animate__animated animate__fadeInUp">
+                        <div class="box">
+                            <div class="icon">
+                                <img src="/clients/g1.png" alt="">
+                                <!-- <i class="fa fa-briefcase" aria-hidden="true"></i> -->
+                            </div>
+                            <h4 class="title"><a href="">Poster Design</a></h4>
+                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 wow animate__animated animate__fadeInUp">
+                        <div class="box">
+                            <div class="icon">
+                                <img src="/clients/g2.png" alt="">
+                                <!-- <i class="fa fa-id-card-o" aria-hidden="true"></i> -->
+                            </div>
+                            <h4 class="title"><a href="">Photo Editing</a></h4>
+                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 wow animate__animated animate__fadeInUp">
+                        <div class="box">
+                            <div class="icon">
+                                <img src="/clients/g3.png" alt="">
+                                <!-- <i class="fa fa-signal" aria-hidden="true"></i> -->
+                            </div>
+                            <h4 class="title"><a href="">Video Editing</a></h4>
+                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 wow animate__animated animate__fadeInUp">
+                        <div class="box">
+                            <div class="icon">
+                                <img src="/clients/g4.png" alt="">
+                                <!-- <i class="fa fa-binoculars" aria-hidden="true"></i> -->
+                            </div>
+                            <h4 class="title"><a href="">Wedding Card Design</a></h4>
+                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 wow animate__animated animate__fadeInUp">
+                        <div class="box">
+                            <div class="icon">
+                                <img src="/clients/g5.png" alt="">
+                                <!-- <i class="fa fa-briefcase" aria-hidden="true"></i> -->
+                            </div>
+                            <h4 class="title"><a href="">Reels Editing</a></h4>
+                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 wow animate__animated animate__fadeInUp">
+                        <div class="box">
+                            <div class="icon">
+                                <img src="/clients/g6.png" alt="">
+                                <!-- <i class="fa fa-briefcase" aria-hidden="true"></i> -->
+                            </div>
+                            <h4 class="title"><a href="">Thumbnail Design</a></h4>
+                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 wow animate__animated animate__fadeInUp">
+                        <div class="box">
+                            <div class="icon">
+                                <img src="/clients/g7.png" alt="">
+                                <!-- <i class="fa fa-briefcase" aria-hidden="true"></i> -->
+                            </div>
+                            <h4 class="title"><a href="">Instagram Post Design</a></h4>
+                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 wow animate__animated animate__fadeInUp">
+                        <div class="box">
+                            <div class="icon">
+                                <img src="/clients/g8.png" alt="">
+                                <!-- <i class="fa fa-briefcase" aria-hidden="true"></i> -->
+                            </div>
+                            <h4 class="title"><a href="">Digital Art</a></h4>
+                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 wow animate__animated animate__fadeInUp">
+                        <div class="box">
+                            <div class="icon">
+                                <img src="/clients/g9.png" alt="">
+                                <!-- <i class="fa fa-briefcase" aria-hidden="true"></i> -->
+                            </div>
+                            <h4 class="title"><a href="">Instagram Story Design</a></h4>
+                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================== Portfolio section==================== -->
+    <section id="portfolio">
+        <div class="container">
+            <div class="section-header wow animate__animated animate__fadeInUp">
+                <h2>OUR PORTFOLIO</h2>
+                <p>Sed tamen tempor magna labore dolore dolor sint tempor duis magna elit veniam aliqua esse amet veniam
+                    enim export quid quid veniam aliqua eram noster malis nulla duis fugiat culpa esse aute nulla ipsum
+                    velit export irure minim illum fore</p>
+            </div>
+            <div class="row wow animate__animated animate__fadeInUp">
+                <div class="col-lg-12 d-flex justify-content-center">
+                    <ul id="portfolio-filters">
+                        <li class="filter-active">All</li>
+                        <li>App</li>
+                        <li>Card</li>
+                        <li>Web</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row wow animate__animated animate__fadeInUp">
+                <div class="col-lg-4">
+                    <img class="img-fluid" src="portfolio/2.jpg" alt="">
+                    <div class="app">
+                        <h2>App</h2>
+                        <p>App</p>
+                        <a class="link" href=""><i class="fa fa-link"></i></a>
+                        <a class="plus" href=""><i class="fa fa-plus"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <img class="img-fluid" src="portfolio/3.jpg" alt="">
+                    <div class="app">
+                        <h2>App</h2>
+                        <p>App</p>
+                        <a class="link" href=""><i class="fa fa-link"></i></a>
+                        <a class="plus" href=""><i class="fa fa-plus"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <img class="img-fluid" src="portfolio/3.jpg" alt="">
+                    <div class="app">
+                        <h2>App</h2>
+                        <p>App</p>
+                        <a class="link" href=""><i class="fa fa-link"></i></a>
+                        <a class="plus" href=""><i class="fa fa-plus"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <img class="img-fluid" src="portfolio/4.jpg" alt="">
+                    <div class="app">
+                        <h2>App</h2>
+                        <p>App</p>
+                        <a class="link" href=""><i class="fa fa-link"></i></a>
+                        <a class="plus" href=""><i class="fa fa-plus"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <img class="img-fluid" src="portfolio/5.jpg" alt="">
+                    <div class="app">
+                        <h2>App</h2>
+                        <p>App</p>
+                        <a class="link" href=""><i class="fa fa-link"></i></a>
+                        <a class="plus" href=""><i class="fa fa-plus"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <img class="img-fluid" src="portfolio/7.jpg" alt="">
+                    <div class="app">
+                        <h2>App</h2>
+                        <p>App</p>
+                        <a class="link" href=""><i class="fa fa-link"></i></a>
+                        <a class="plus" href=""><i class="fa fa-plus"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <img class="img-fluid" src="portfolio/9.jpg" alt="">
+                    <div class="app">
+                        <h2>App</h2>
+                        <p>App</p>
+                        <a class="link" href=""><i class="fa fa-link"></i></a>
+                        <a class="plus" href=""><i class="fa fa-plus"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <img class="img-fluid" src="portfolio/10.jpg" alt="">
+                    <div class="app">
+                        <h2>App</h2>
+                        <p>App</p>
+                        <a class="link" href=""><i class="fa fa-link"></i></a>
+                        <a class="plus" href=""><i class="fa fa-plus"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <img class="img-fluid" src="portfolio/11.jpg" alt="">
+                    <div class="app">
+                        <h2>App</h2>
+                        <p>App</p>
+                        <a class="link" href=""><i class="fa fa-link"></i></a>
+                        <a class="plus" href=""><i class="fa fa-plus"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- =============================call to aCTION===================== -->
+    <section id="call">
+        <div class="container">
+            <div class="row wow animate__animated animate__fadeIn">
+                <div class="col-lg-9">
+                    <h4>Call To Action</h4>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                        mollit anim id est laborum.</p>
+                </div>
+                <div class="col-lg-3 cta-btn">
+                    <a class=" align-middle" href="">Call To Action</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- ========================contact us============== -->
+    <section id="contact" class="wow animate__animated animate__fadeInUp">
+        <div class="container">
+            <div class="section-header">
+                <h2>CONTACT US</h2>
+                <p>Sed tamen tempor magna labore dolore dolor sint tempor duis magna elit veniam aliqua esse amet veniam
+                    enim export quid quid veniam aliqua eram noster malis nulla duis fugiat culpa esse aute nulla ipsum
+                    velit export irure minim illum fore</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="contact-adress">
+                        <i class="fa fa-map-marker"></i>
+                        <h3>ADDRESS</h3>
+                        <address>Ambikapuri, Indore
+                        </address>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="contact-phone">
+                        <i class="fa fa-mobile"></i>
+                        <h3>PHONE NUMBER</h3>
+                        <P><a href="tel:+918889350214">+91 88893 50214</a></P>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="contact-adress">
+                        <i class="fa fa-envelope-o"></i>
+                        <h3>EMAIL</h3>
+                        <P><a href="mailto:83graphics@gmail.com">83graphics888@gmail.com</a></P>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="container mb-4">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m17!1m11!1m3!1d779.9530481919279!2d75.86307946721412!3d22.6789051243934!2m2!1f0!2f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fcf28cbb6185%3A0x205f7d4c34684f80!2sAmbikapuri%2C%20Indore%2C%20Madhya%20Pradesh!5e1!3m2!1sen!2sin!4v1692470630602!5m2!1sen!2sin"
+                width="100%" height="380" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+        <div class="container">
+            <div class="form">
+                <form onsubmit="formsubmit()">
+                    <div class="row mb-0">
+                        <div class="col-lg-6 form-group">
+                            <input id="name" type="text" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="col-lg-6 form-group">
+                            <input id="city" type="text" class="form-control" placeholder="City" required>
+                        </div>
+                        <div class="col-lg-6 form-group">
+                            <input id="subject" type="text" class="form-control" placeholder="Subject" required>
+                        </div>
+                        <div class="col-lg-6 form-group">
+                            <select id="list" name="cars" class="custom-select mb-3" required>
+                                <option value="">Select Service</option>
+                                <option value="Poster Design">Poster Design</option>
+                                <option value="Photo Editing">Photo Editing</option>
+                                <option value="Video Editing">Video Editing</option>
+                                <option value="Wedding Card Design">Wedding Card Design</option>
+                                <option value="Reels Editing">Reels Editing</option>
+                                <option value="Thumbnail Design">Thumbnail Design</option>
+                                <option value="Instagram Post Design">Instagram Post Design</option>
+                                <option value="Digital Art">Digital Art</option>
+                                <option value="Instagram Story Design">Instagram Story Design</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="area" class="form-control" name="message" placeholder="Message" rows="5"
+                            required></textarea>
+                    </div>
+                    <div class="text-center">
+                        <input class="btn text-white" type="submit" name="submit"
+                            style="background-color: #ff1540;"></input>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =======================footer================= -->
+    <footer id="footer">
+        <div class="container">
+            <div class="copyright">© Copyright <strong>Reveal</strong>. All Rights Reserved </div>
+            <div class="credits">
+                Designed by<a href="">BootstrapMade</a>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="fa fa-arrow-up"></i></a>
+
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"
+        integrity="sha512-gmwBmiTVER57N3jYS3LinA9eb8aHrJua5iQD7yqYCKa5x6Jjc7VDVaEA0je0Lu0bP9j7tEjV3+1qUm6loO99Kw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        new WOW().init();
+
+        gsap.fromTo(
+            ".wrapper",
+            { opacity: 1 },
+            {
+                opacity: 0,
+                display: "none",
+                // duration: 1.5,
+                delay: 2.8,
+            }
+        );
+
+        gsap.fromTo(
+            ".logo-name",
+            {
+                y: 50,
+                opacity: 0,
+            },
+            {
+                y: 0,
+                opacity: 1,
+                duration: 2,
+                delay: 0.5,
+            }
+        );
+
+
+        window.addEventListener("load", () => {
+            const loader = document.querySelector(".loader");
+            loader.classList.add("loader-hidden");
+            loader.addEventListener("transitionend", () => {
+                document.body.removeChild("loader");
+            })
+        });
+        const typed = new Typed(".sec-text", {
+            strings: ["Graphic Designer", "Video Editor", "Photographer", "Web Developer"],
+            backSpeed: 100,
+            typeSpeed: 100,
+            loop: true
+        });
+
+        /*==========Back to top ==========*/
+        const toTop = document.querySelector(".back-to-top");
+
+        window.addEventListener("scroll", () => {
+            if (window.pageYOffset > 100) {
+                toTop.classList.add("active")
+            } else {
+                toTop.classList.remove("active")
+            }
+        })
+
+
+        /*============ form submit ================*/
+
+        function formsubmit() {
+            const name = document.getElementById("name").value;
+            const city = document.getElementById("city").value;
+            const subject = document.getElementById("subject").value;
+            const area = document.getElementById("area").value;
+            const list = document.getElementById("list").value;
+
+            const url = "https://wa.me/918889350214?text=Hi%20There!" +
+                "Name: " + name + "%0a" + "City: " + city + "%0a" + "subject: " + subject + "%0a" + "area: " + area + "%0a" + "Select Service: " + list;
+
+            window.open(url, "_blank").focus();
+
+        };
+
+    </script>
+
+    <!-- jQuery library -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
